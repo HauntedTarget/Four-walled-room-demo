@@ -1,5 +1,4 @@
 import tkinter as tkin
-
 class Room:
   def __init__(self):
     #class variable init
@@ -7,13 +6,10 @@ class Room:
     self.door = tkin.Tk()
     self.enter = tkin.Button(self.door,text='Enter',command = self.enterRoom)
     self.enter.pack(side='top')
-
     tkin.mainloop()
-  
   def enterRoom(self):
     self.door.withdraw()
     self.wall1()
-  
   def wall1(self):
     self.one = tkin.Toplevel()
     self.left = tkin.Button(self.one,text='left',command=self.goleft)
@@ -22,7 +18,6 @@ class Room:
     self.left.pack(side='left')
     self.wall.pack(side='left')
     self.right.pack(side='left')
-  
   def wall2(self):
     self.two = tkin.Toplevel()
     self.left = tkin.Button(self.two,text='left',command=self.goleft)
@@ -31,7 +26,6 @@ class Room:
     self.left.pack(side='left')
     self.wall.pack(side='left')
     self.right.pack(side='left')
-  
   def wall3(self):
     self.three = tkin.Toplevel()
     self.left = tkin.Button(self.three,text='left',command=self.goleft)
@@ -40,7 +34,6 @@ class Room:
     self.left.pack(side='left')
     self.wall.pack(side='left')
     self.right.pack(side='left')
-  
   def wall4(self):
     self.four = tkin.Toplevel()
     self.left = tkin.Button(self.four,text='left',command=self.goleft)
@@ -49,21 +42,18 @@ class Room:
     self.left.pack(side='left')
     self.wall.pack(side='left')
     self.right.pack(side='left')
-  
   def goleft(self):
     if self.wallface > 1:
       self.wallface -= 1
     else:
       self.wallface = 4
     self.move()
-  
   def goright(self):
     if self.wallface < 4:
       self.wallface += 1
     else:
       self.wallface = 1
     self.move()
-    
   def move(self): 
     if self.wallface == 1:
       try:
@@ -79,7 +69,6 @@ class Room:
       except:
         print()
       self.wall1()
-
     if self.wallface == 2:
       try:
         self.one.destroy()
@@ -94,7 +83,6 @@ class Room:
       except:
         print()
       self.wall2()
-    
     if self.wallface == 3:
       try:
         self.two.destroy()
@@ -109,7 +97,6 @@ class Room:
       except:
         print()
       self.wall3()
-
     if self.wallface == 4:
       try:
         self.two.destroy()
@@ -124,8 +111,4 @@ class Room:
       except:
         print()
       self.wall4()
-
-
-
-  
 place = Room()
