@@ -2,6 +2,7 @@ import tkinter as tkin
 
 class Room:
   def __init__(self):
+    #class variable init
     self.wallface = 1
     self.door = tkin.Tk()
     self.enter = tkin.Button(self.door,text='Enter',command = self.enterRoom)
